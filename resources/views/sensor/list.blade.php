@@ -31,6 +31,7 @@
                         <thead>
                             <tr>
                                 <th>Sensor</th>
+                                <th>Data</th>
                                 <th>SSID</th>
                             </tr>
                         </thead>
@@ -38,6 +39,7 @@
                         
                         <tr>
                             <td>{{$sensor->name}}={{$sensor->valor}}{{$sensor->grandeza}}</td>
+                            <td>{{$sensor->created_at}}</td>
                             <td>{{$sensor->ssid}}</td>
 
                             

@@ -22,5 +22,21 @@ class SensorController extends Controller
         return view('sensor.list',compact('sensors', 'tipo','total'));
     }
 
-  
+    public function add(Request $request)
+    {
+
+        $sensor = Sensor::create([
+        'grandeza' => $request->grandeza,
+        'esp_id' => $request->esp_id,
+        'valor' => $request->valor,
+        'name' => $request->name,
+        'ssid' => $request->ssid,
+
+
+      ]);
+
+        $sensor->save();
+
+    }
+
 }

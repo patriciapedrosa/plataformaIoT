@@ -54,4 +54,14 @@ class EspController extends Controller
         ->with('success', 'Esp Desligado com sucesso');
     }
 
+    public function add(Request $request)
+    {
+        $mac_adress = $request->input('mac');
+        $mac_count = Esp::where('mac', '=', $mac_adress)->count();
+        if ($mac_count == 0) {
+            $mac = Esp::create(['mac' => $mac_adress, 'status' => 1]);
+        }
+        return response()->json(['message' => 'sucesso'], 200);
+    }
+
 }
