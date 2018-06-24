@@ -19,7 +19,7 @@ class CreateSensorsTable extends Migration
             $table->integer('esp_id');
             $table->integer('valor');
             $table->string('name');
-            $table->string('ssid');
+            $table->boolean('ativo');
             $table->timestamps();
         });
     }

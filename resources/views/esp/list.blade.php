@@ -9,47 +9,22 @@
                         </h2>
 
                         
-                        <br>Número de esps: 
-                        <span>{{$total}}</span> 
-                        
-                        <br>Número de esps ligados: 
-                        <span>{{$status}}</span> 
-                        
-
-                        
-                        
                     </div>
                     @if (count($esps)) 
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>MAC</th>
-                                <th>Estado</th>
-                                <th>Ligar/Desligar</th>
+                                <th>Nome</th>
+                                
                                 <th>Sensores</th>
                             </tr>
                         </thead>
                         @foreach ($esps as $esp) 
                         <tr>
-                            <td>{{$esp->mac}}</td>
-                            <td>{{$esp->statusToStr()}}</td>
-                            <td>
-                                @if($esp->status == '0')
-                                <form action="{{ route('esp.turnOn',$esp->id) }}" method="post" class="form-group">
-                                    {{csrf_field()}}
-                                    <div class="form-group">
-                                        <button type="submit"  class="btn btn-success" name="ok">Ligar</button>
-                                    </div>
-                                </form>
-                                @else
-                                <form action="{{ route('esp.turnOff',$esp->id) }}" method="post" class="form-group">
-                                    {{csrf_field()}}
-                                    <div class="form-group">
-                                        <button type="submit"  class="btn btn-danger" name="ok">Desligar</button>
-                                    </div>
-                                </form>
-                                @endif
-                            </td>
+                            <td>{{$esp->thingId}}</td>
+                            <td>{{$esp->thingNome}}</td>
+                            
                             <td>
                                 <a class="btn btn-info" href="{{route('sensor.list', $esp->id)}}">Ver sensores</a>
                             </td>

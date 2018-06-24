@@ -17,6 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/esp/{id}','EspController@status');
-Route::post('/addMac', 'EspController@add'); //funciona
-Route::post('/addSensor', 'SensorController@add'); //funciona
+
+Route::post('/add', 'SensorEspControllerAPI@add'); //funciona

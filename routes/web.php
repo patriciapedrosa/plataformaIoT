@@ -28,8 +28,8 @@ Route::get('/', function(){
 	}
 });
 
-Route::middleware('auth')->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');//funcional
-Route::middleware('auth')->post('register', 'Auth\RegisterController@register');//funcional
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');//funcional
+Route::post('register', 'Auth\RegisterController@register');//funcional
 /*Route::get('/home',function(){
 	return view('home');
 });*/

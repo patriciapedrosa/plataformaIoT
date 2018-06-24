@@ -16,27 +16,12 @@ class SensorController extends Controller
      */
     public function index(Esp $esp)
     {
-        $total = Sensor::where('esp_id', $esp->id)->orderBy('id')->count();
+        
         $sensors = Sensor::where('esp_id', $esp->id)->orderBy('id')->paginate(10);
-        $tipo = Sensor::where('esp_id', $esp->id)->select('name')->distinct()->get();
-        return view('sensor.list',compact('sensors', 'tipo','total'));
+        
+        return view('sensor.list',compact('sensors'));
     }
 
-    public function add(Request $request)
-    {
 
-        $sensor = Sensor::create([
-        'grandeza' => $request->grandeza,
-        'esp_id' => $request->esp_id,
-        'valor' => $request->valor,
-        'name' => $request->name,
-        'ssid' => $request->ssid,
-
-
-      ]);
-
-        $sensor->save();
-
-    }
 
 }
