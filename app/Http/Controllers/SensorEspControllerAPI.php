@@ -25,7 +25,14 @@ class SensorEspControllerAPI extends Controller
 			$esp->save();
 		}
 
+
 		$esp =Esp::where('thingId', $request->thingId)->value('id');
+
+        $sensor=Sensor::where('esp_id', $esp);
+
+
+        $sensor->delete();
+
 		
 		$sensor1 = Sensor::create([
 			'grandeza' => $request->UA0,
