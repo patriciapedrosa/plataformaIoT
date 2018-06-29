@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Esp extends Model
 {
     protected $fillable = [
-        'id','thingId','thingNome',
+        'id','thingId','ssid',
     ];
 
     public function sensor()

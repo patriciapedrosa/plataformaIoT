@@ -15,7 +15,7 @@
                         <thead>
                             <tr>
                                 <th>MAC</th>
-                                <th>Nome</th>
+                                <th>SSID</th>
                                 
                                 <th>Sensores</th>
                             </tr>
@@ -23,7 +23,7 @@
                         @foreach ($esps as $esp) 
                         <tr>
                             <td>{{$esp->thingId}}</td>
-                            <td>{{$esp->thingNome}}</td>
+                            <td>{{$esp->ssid}}</td>
                             
                             <td>
                                 <a class="btn btn-info" href="{{route('sensor.list', $esp->id)}}">Ver sensores</a>

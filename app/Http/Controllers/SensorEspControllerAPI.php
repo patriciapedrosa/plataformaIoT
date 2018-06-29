@@ -12,21 +12,21 @@ class SensorEspControllerAPI extends Controller
 {
 	public function add(Request $request)
 	{
-		$mac_adress = $request->input('thingNome');
-		$mac_count = Esp::where('thingNome', '=', $mac_adress)->count();
+		$mac_adress = $request->input('thingId');
+		$mac_count = Esp::where('thingId', '=', $mac_adress)->count();
 		if ($mac_count == 0) {
 
 
 			$esp = Esp::create([
+				'ssid' => $request->ssid,
 				'thingId' => $request->thingId,
-				'thingNome' => $request->thingNome,
 			]);
 
 			$esp->save();
 		}
 
 
-		$esp =Esp::where('thingId', $request->thingId)->value('id');
+		$esp =Esp::where('ssid', $request->ssid)->value('id');
 
         $sensor=Sensor::where('esp_id', $esp);
 

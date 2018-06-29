@@ -15,8 +15,8 @@ class CreateEspsTable extends Migration
     {
         Schema::create('esps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('thingNome')->unique();
             $table->string('thingId')->unique();
+            $table->string('ssid');
             $table->timestamps();
         });
     }
