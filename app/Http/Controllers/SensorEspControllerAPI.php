@@ -35,25 +35,25 @@ class SensorEspControllerAPI extends Controller
 
 		
 		$sensor1 = Sensor::create([
-			'grandeza' => $request->UA0,
-			'name' => $request->NA0,
+			'grandeza' => $request->US0,
+			'name' => $request->NS0,
 			'esp_id' => $esp,
-			'valor' => $request->VA0,
-			'ativo' => $request->EA0,
+			'valor' => $request->VS0,
+			'ativo' => $request->ES0,
 		]);
 		$sensor2 = Sensor::create([
-			'grandeza' => $request->UD1,
-			'name' => $request->ND1,
+			'grandeza' => $request->US1,
+			'name' => $request->NS1,
 			'esp_id' => $esp,
-			'valor' => $request->VD1,
-			'ativo' => $request->ED1,
+			'valor' => $request->VS1,
+			'ativo' => $request->ES1,
 		]);
 		$sensor3 = Sensor::create([
-			'grandeza' => $request->UD2,
-			'name' => $request->ND2,
+			'grandeza' => $request->US2,
+			'name' => $request->NS2,
 			'esp_id' => $esp,
-			'valor' => $request->VD2,
-			'ativo' => $request->ED2,
+			'valor' => $request->VS2,
+			'ativo' => $request->ES2,
 		]);
 		$sensor1->save();
 		$sensor2->save();
