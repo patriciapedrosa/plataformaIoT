@@ -58,6 +58,7 @@ class SensorEspControllerAPI extends Controller
 		$sensor1->save();
 		$sensor2->save();
 		$sensor3->save();
+		return response()->json(['message' => 'sucesso'], 200);
 
 	}
 }
