@@ -25,6 +25,16 @@ class EspController extends Controller
         
     }
 
+    public function destroy($thing_id)
+    {  
+
+        $esp = Esp::findOrFail($thing_id);
+        $esp->delete();
+        
+        return redirect()
+        ->route('esp.list')
+        ->with('success', 'Esp eliminado com sucesso');
+    }
 
 
 }

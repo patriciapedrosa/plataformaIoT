@@ -18,6 +18,7 @@
                                 <th>SSID</th>
                                 
                                 <th>Sensores</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         @foreach ($esps as $esp) 
@@ -27,6 +28,13 @@
                             
                             <td>
                                 <a class="btn btn-info" href="{{route('sensor.list', $esp->id)}}">Ver sensores</a>
+                            </td>
+                            <td>
+                            <a><form action="{{ route('esp.delete',$esp) }}" method="POST" accept-charset="utf-8">
+                                    {{method_field('delete')}}
+                                    {{csrf_field()}}
+                                    <button type="submit" class="btn btn-xs btn-danger">Remover</button>
+                                </form> </a>
                             </td>
                             
                             

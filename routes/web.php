@@ -42,5 +42,6 @@ Route::middleware('auth')->post('/esp/turnOff/{esp}', 'EspController@turnOff')->
 
 //Rotas Sensores
 Route::middleware('auth')->get('/sensor/{esp}','SensorController@index')->name('sensor.list');//funcional
+Route::middleware('auth')->delete('esp/{esp}/delete', 'EspController@destroy')->name('esp.delete');
 
 
